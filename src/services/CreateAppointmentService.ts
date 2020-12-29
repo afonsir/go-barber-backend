@@ -1,6 +1,6 @@
 import { startOfHour } from 'date-fns';
 
-import Appointment from "../models/Appointment";
+import Appointment from '../models/Appointment';
 import AppointmentsRepository from '../repositories/AppointmentsRepository';
 
 interface Request {
@@ -19,7 +19,7 @@ class CreateAppointmentService {
     const appointmentDate = startOfHour(date);
 
     const findAppointmentInSameDate = this.appointmentsRepository.findByDate(
-      appointmentDate
+      appointmentDate,
     );
 
     if (findAppointmentInSameDate) {
@@ -28,7 +28,7 @@ class CreateAppointmentService {
 
     const appointment = this.appointmentsRepository.create({
       provider,
-      date: appointmentDate
+      date: appointmentDate,
     });
 
     return appointment;
