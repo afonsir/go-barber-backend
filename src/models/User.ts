@@ -11,10 +11,10 @@ class User {
   @PrimaryGeneratedColumn('uuid')
   id: string;
 
-  @Column('varchar')
+  @Column()
   email: string;
 
-  @Column('varchar')
+  @Column()
   password: string;
 
   @Column('timestamp with time zone')
