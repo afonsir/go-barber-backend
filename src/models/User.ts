@@ -12,19 +12,19 @@ class User {
   id: string;
 
   @Column()
+  name: string;
+
+  @Column()
   email: string;
 
   @Column()
   password: string;
 
-  @Column('timestamp with time zone')
-  date: Date;
-
   @CreateDateColumn()
-  createdAt: Date;
+  created_at: Date;
 
   @UpdateDateColumn()
-  updatedAt: Date;
+  updated_at: Date;
 }
 
 export default User;
